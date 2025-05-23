@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAHEBAK ABOUDY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      text-align: center;
+      max-width: 500px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #d76d77;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 3rem;
+      color: #ff6f91;
+      animation: pulse 1.5s infinite;
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4e72;
+    }
+
+    .options {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>matz3alsh ya kooty</h1>
+    <div class="heart">💖</div>
+    <p>
+      7a2ak 3alaya ya kooty mayhonsh 3alaya tb2a mdaye2 <br />
+      You mean so much to me.<br /><br />
+      wahashteny awyy sebteny tool el yom 💞
+    </p>
+    <button onclick="showOptions()">lesa za3lan?</button>
+
+    <div class="options" id="options">
+      <button onclick="respondYes()">Yes 💘</button>
+      <button onclick="respondNo()">No 😤</button>
+    </div>
+
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById("options").style.display = "block";
+    }
+
+    function respondYes() {
+      document.getElementById("response").innerHTML = "3arfa enak bthbny💖";
+    }
+
+    function respondNo() {
+      const funnyMessages = [
+        "la mafeesh 7aga esmaha kda 🚨",
+        "not an option de yes 3amla nafsaha no",
+        "shhh etsale7t",
+        "mat2ool yes ba2a yooh",
+        "ekhyyy"
+      ];
+      const msg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+      document.getElementById("response").innerHTML = msg;
+    }
+  </script>
+</body>
+</html>
